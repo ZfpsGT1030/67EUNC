@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UNC Results</title>
+  <meta name="description" content="Upload and view UNC test results." />
+  <style>
+    :root {
+      --bg: #0e0e18;
+      --bg2: #16162a;
+      --border: #2a2a45;
+      --purple: #b7a0f6;
+      --text: #e0e0e0;
+      --muted: #9b9bb3;
+      --green: #44c638;
+      --font: Inter, system-ui, sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: var(--font);
+      background: radial-gradient(circle at top, #1b1b35 0%, var(--bg) 55%);
+      color: var(--text);
+      padding: 24px;
+    }
+    .card {
+      width: 100%;
+      max-width: 760px;
+      background: rgba(22, 22, 42, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+    h1 { margin: 0 0 10px; font-size: 2rem; }
+    p { color: var(--muted); line-height: 1.6; }
+    .pill {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(183,160,246,.12);
+      color: var(--purple);
+      font-size: .9rem;
+      font-weight: 600;
+    }
+    .box {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 14px;
+      background: #111122;
+      border: 1px solid var(--border);
+    }
+    code, pre { font-family: var(--mono); }
+    pre {
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #f4f4ff;
+      margin: 0;
+    }
+    .ok { color: var(--green); font-weight: 700; }
+    a { color: var(--purple); }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="pill">Vercel project fixed</div>
+    <h1>UNC Results</h1>
+    <p>This deployment accepts uploads at <code>/api/results</code> and shows result pages at <code>/result/&lt;id&gt;</code>.</p>
+
+    <div class="box">
+      <p class="ok">Ready URL format</p>
+      <pre>https://your-project.vercel.app/result/0123456789abcdef</pre>
+    </div>
+
+    <div class="box">
+      <p>Before deploying, make sure:</p>
+      <pre>1. Vercel KV is connected to this project
+2. The project contains the api/ folder from this download
+3. unc_tester.lua points to your stable deployment URL</pre>
+    </div>
+  </main>
+</body>
+</html>
